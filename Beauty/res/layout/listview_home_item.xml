@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="vertical" 
+    android:background="@color/trans_while" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:id="@+id/listview_home_item_rootlayout">
+    <!-- 头像 昵称 时间 -->
+    <RelativeLayout 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+        <ImageView 
+            android:id="@+id/listview_home_item_headimg" 
+            android:layout_alignParentLeft="true"
+            android:layout_width="45.0dip" 
+            android:layout_height="45.0dip" 
+            android:layout_marginLeft="10.0dip" 
+            android:layout_marginTop="10.0dip" 
+            android:layout_marginRight="12.0dip" 
+            android:layout_marginBottom="10.0dip" />
+        <ImageView 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/listview_home_item_collection" 
+            android:layout_width="20.0dip" 
+            android:layout_height="20.0dip" 
+            android:layout_marginRight="12.0dip"
+            android:src="@drawable/collection_icon"/>
+
+        <LinearLayout
+            android:id="@+id/listview_comment_item_nickname_time_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/listview_home_item_headimg"
+            android:layout_toRightOf="@+id/listview_home_item_headimg"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/listview_home_item_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="降幅扩大解"
+                android:textColor="#ff58b62e"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:id="@+id/listview_home_item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6.0dip"
+                android:text="2014.12.12"
+                android:textColor="#ffcc5e33"
+                android:textSize="10.0sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!-- 分享的照片 -->
+    <LinearLayout 
+        android:id="@+id/listview_home_item_sharedimg_linearlayout" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="10.0dip" 
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginRight="10dip">
+        <ImageView 
+            android:id="@+id/listview_home_item_sharedimg" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content"
+            android:scaleType="matrix" />
+    </LinearLayout>
+    <!-- 评论 喜欢 不喜欢 -->
+    <LinearLayout 
+        android:orientation="vertical" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content">
+        <View 
+            android:background="#25666666" 
+            android:layout_width="fill_parent" 
+            android:layout_height="0.100000024dip" />
+        <LinearLayout 
+            android:gravity="center" 
+            android:layout_width="fill_parent" 
+            android:layout_height="30.0dip">
+            <LinearLayout 
+                android:gravity="center" 
+                android:orientation="horizontal" 
+                android:id="@+id/listview_home_item_comment_layout" 
+                android:background="@drawable/btn_style2" 
+                android:paddingTop="5.0dip" 
+                android:paddingRight="10.0dip" 
+                android:paddingBottom="5.0dip" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent" 
+                android:layout_weight="1.0">
+                <ImageView 
+                    android:layout_width="15.0dip" 
+                    android:layout_height="15.0dip" 
+                    android:layout_marginRight="5.0dip" 
+                    android:src="@drawable/main_item_comment" />
+                <TextView 
+                    android:id="@+id/listview_home_item_comment_textview"
+                    android:textSize="12.0sp" 
+                    android:textColor="#ff9c9c9c" 
+                    android:gravity="center" 
+                    android:background="#00000000" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="0" 
+                    android:singleLine="true" />
+            </LinearLayout>
+            <View 
+                android:background="#25666666" 
+                android:layout_width="0.100000024dip" 
+                android:layout_height="fill_parent" 
+                android:layout_marginTop="10.0dip" 
+                android:layout_marginBottom="10.0dip" />
+            <LinearLayout 
+                android:gravity="center" 
+                android:orientation="horizontal" 
+                android:id="@+id/listview_home_item_like_layout" 
+                android:background="@drawable/btn_style2" 
+                android:paddingRight="10.0dip" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent" 
+                android:layout_weight="1.0">
+                <ImageView 
+                    android:layout_width="12.0dip" 
+                    android:layout_height="12.0dip" 
+                    android:layout_marginRight="5.0dip" 
+                    android:src="@drawable/main_item_like" />
+                <TextView 
+                    android:id="@+id/listview_home_item_like_textview"
+                    android:textSize="12.0sp" 
+                    android:textColor="#ff9c9c9c" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="0" />
+            </LinearLayout>
+            <View 
+                android:background="#25666666" 
+                android:layout_width="0.100000024dip" 
+                android:layout_height="fill_parent" 
+                android:layout_marginTop="10.0dip" 
+                android:layout_marginBottom="10.0dip" />
+            <LinearLayout 
+                android:gravity="center" 
+                android:orientation="horizontal" 
+                android:id="@+id/listview_home_item_dislike_layout" 
+                android:background="@drawable/btn_style2" 
+                android:paddingRight="10.0dip" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent" 
+                android:layout_weight="1.0">
+                <ImageView 
+                    android:layout_width="15.0dip" 
+                    android:layout_height="15.0dip" 
+                    android:layout_marginRight="5.0dip" 
+                    android:src="@drawable/main_item_dislike" />
+                <TextView 
+                    android:id="@+id/listview_home_item_dislike_textview"
+                    android:textSize="12.0sp" 
+                    android:textColor="#ff9c9c9c" 
+                    android:gravity="center" 
+                    android:background="#00000000" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="0" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <View 
+            android:background="#25666666" 
+            android:layout_width="fill_parent" 
+            android:layout_height="0.8000001dip" />
+    </LinearLayout>
+    
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:id="@+id/listview_home_item_id"
+        android:visibility="gone"/>
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:id="@+id/listview_home_item_username"
+        android:visibility="gone"/>
+</LinearLayout>

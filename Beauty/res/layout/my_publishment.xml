@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee" >
+    
+    <RelativeLayout 
+        android:id="@+id/listview_comment_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#9ea7a5">
+        <ImageButton 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_back"
+            android:onClick="backBtn"
+            android:layout_marginLeft="6dp"/>
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/mainpage_top"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:divider="#00bfbfbf"
+        android:dividerHeight="0.00000009dp"
+        android:headerDividersEnabled="false"
+        android:footerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        android:cacheColorHint="#00000000"
+        android:fastScrollEnabled="false"
+        android:layout_below="@+id/listview_comment_top"
+        android:id="@+id/my_publishment_listview" />
+
+</RelativeLayout>

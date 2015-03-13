@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee" >
+    
+    <RelativeLayout 
+        android:id="@+id/listview_comment_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#9ea7a5">
+        <ImageButton 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_back"
+            android:onClick="backBtn"
+            android:layout_marginLeft="6dp"/>
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/mainpage_top"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="60dp"
+        android:fadingEdge="none"
+        android:divider="#00bfbfbf"
+        android:dividerHeight="0.00000009dp"
+        android:headerDividersEnabled="false"
+        android:footerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        android:cacheColorHint="#00000000"
+        android:fastScrollEnabled="false"
+        android:layout_below="@+id/listview_comment_top"
+        android:id="@+id/listview_comment_listview" />
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#dcdcdc"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/listview_comment_listview">
+        <EditText 
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/listview_comment_edittext"
+            android:background="@drawable/search_bar_edit_normal"
+            android:layout_margin="8dp"
+            android:hint="编辑评论..."
+            android:maxHeight="82dp"
+            android:lineSpacingExtra="1.8dp"
+            android:maxLength="50"
+            android:padding="7dp"/>
+        <Button 
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/listview_comment_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_style_transparent"
+            android:text="发送"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:onClick="sendComment"/>
+	</RelativeLayout>
+
+</RelativeLayout>

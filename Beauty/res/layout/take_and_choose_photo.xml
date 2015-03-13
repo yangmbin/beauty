@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/take_and_choose_photo_layout"
+    android:layout_width="260dp"
+    android:layout_height="80dp"
+    android:background="@drawable/exit_dialog_bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/take_and_choose_photo_1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_style1"
+            android:gravity="center"
+            android:text="相册"
+            android:textColor="#aa000000"
+            android:textSize="16sp"
+            android:onClick="choosePhoto" />
+        <Button
+            android:id="@+id/take_and_choose_photo_2"
+            android:layout_toRightOf="@+id/take_and_choose_photo_1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_style1"
+            android:gravity="center"
+            android:text="拍照"
+            android:textColor="#66000000"
+            android:textSize="16sp"
+            android:onClick="takePhoto" />
+    </RelativeLayout>
+</LinearLayout>

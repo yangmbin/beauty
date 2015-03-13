@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.beauty"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+    
+    <!-- Bmob添加的权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+
+    <application
+        android:name="com.beauty.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/desk_icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.beauty.ui.AppStart"
+            android:label="BEAUTY" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- 主页面 -->
+        <activity android:name="com.beauty.ui.MainActivity" />
+        <!-- 登录界面 -->
+        <activity android:name="com.beauty.ui.LoginActivity" />
+        <!-- 注册界面 -->
+        <activity android:name="com.beauty.ui.RegisterActivity" />
+        <!-- 加载页面 -->
+        <activity android:name="com.beauty.ui.LoadingActivity"
+            android:theme="@style/MyDialogStyle" />
+        <!-- 退出页面 -->
+        <activity android:name="com.beauty.ui.Exit"
+            android:theme="@style/MyDialogStyle" />
+        <!-- 选择照片和拍照对话框页面 -->
+        <activity android:name="com.beauty.ui.TakeAndChoosePhoto"
+            android:theme="@style/MyDialogStyle" />
+        <!-- 评论列表 -->
+        <activity android:name="com.beauty.ui.CommentActivity" />
+        <!-- 修改用户信息页面 -->
+        <activity android:name="com.beauty.ui.SetUserInfo"
+            android:theme="@style/MyDialogStyle" />
+        <!-- 我发布的BEAUTY信息页面 -->
+        <activity android:name="com.beauty.ui.MyPublishment"/>
+    </application>
+
+</manifest>

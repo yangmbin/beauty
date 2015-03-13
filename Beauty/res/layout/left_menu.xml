@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slidemenu_bg" >
+
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:layout_centerInParent="true">
+	    <!-- 主页 -->
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:onClick="slideMenuToHome">
+	        <ImageView 
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:background="@drawable/left_menu_home"/>
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="30dp"
+	            android:text="主页"
+	            android:textSize="18sp"
+	            android:textColor="#ffffff"
+	            android:gravity="center"
+	            android:singleLine="true"/>
+	    </LinearLayout>
+	    <!-- 喜欢 -->
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:onClick="slideMenuToLike">
+	        <ImageView 
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:background="@drawable/left_menu_like"/>
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="30dp"
+	            android:text="喜欢"
+	            android:textSize="18sp"
+	            android:textColor="#ffffff"
+	            android:gravity="center"
+	            android:singleLine="true"/>
+	    </LinearLayout>
+	    <!-- 设置 -->
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:onClick="slideMenuToSetting">
+	        <ImageView 
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:background="@drawable/left_menu_setting"/>
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="30dp"
+	            android:text="设置"
+	            android:textSize="18sp"
+	            android:textColor="#ffffff"
+	            android:gravity="center"
+	            android:singleLine="true"/>
+	    </LinearLayout>
+	    <!-- 关于 -->
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:onClick="slideMenuToAbout">
+	        <ImageView 
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:background="@drawable/left_menu_about"/>
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="30dp"
+	            android:text="关于"
+	            android:textSize="18sp"
+	            android:textColor="#ffffff"
+	            android:gravity="center"
+	            android:singleLine="true"/>
+	    </LinearLayout>
+	</LinearLayout>
+
+</RelativeLayout>

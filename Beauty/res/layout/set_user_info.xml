@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/set_user_info_layout"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/exit_dialog_bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp">
+        <EditText 
+            android:id="@+id/set_user_info_edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:background="@drawable/search_bar_edit_normal"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:lineSpacingExtra="1.8dp"
+            android:padding="6dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/set_user_info_button_yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_style1"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#aa000000"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:onClick="buttonYes" />
+        <Button
+            android:id="@+id/set_user_info_button_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_style1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#66000000"
+            android:textSize="16sp" 
+            android:layout_weight="1"
+            android:onClick="buttonNo" />
+    </LinearLayout>
+</LinearLayout>
