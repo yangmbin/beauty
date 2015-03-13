@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.beauty"
+    package="com.yangmbin.beauty"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -18,13 +18,13 @@
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <application
-        android:name="com.beauty.application.MyApplication"
+        android:name="yangmbin.beauty.application.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/desk_icon"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:name="com.beauty.ui.AppStart"
+            android:name="yangmbin.beauty.ui.AppStart"
             android:label="BEAUTY" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,27 +34,27 @@
         </activity>
         
         <!-- 主页面 -->
-        <activity android:name="com.beauty.ui.MainActivity" />
+        <activity android:name="yangmbin.beauty.ui.MainActivity" />
         <!-- 登录界面 -->
-        <activity android:name="com.beauty.ui.LoginActivity" />
+        <activity android:name="yangmbin.beauty.ui.LoginActivity" />
         <!-- 注册界面 -->
-        <activity android:name="com.beauty.ui.RegisterActivity" />
+        <activity android:name="yangmbin.beauty.ui.RegisterActivity" />
         <!-- 加载页面 -->
-        <activity android:name="com.beauty.ui.LoadingActivity"
+        <activity android:name="yangmbin.beauty.ui.LoadingActivity"
             android:theme="@style/MyDialogStyle" />
         <!-- 退出页面 -->
-        <activity android:name="com.beauty.ui.Exit"
+        <activity android:name="yangmbin.beauty.ui.Exit"
             android:theme="@style/MyDialogStyle" />
         <!-- 选择照片和拍照对话框页面 -->
-        <activity android:name="com.beauty.ui.TakeAndChoosePhoto"
+        <activity android:name="yangmbin.beauty.ui.TakeAndChoosePhoto"
             android:theme="@style/MyDialogStyle" />
         <!-- 评论列表 -->
-        <activity android:name="com.beauty.ui.CommentActivity" />
+        <activity android:name="yangmbin.beauty.ui.CommentActivity" />
         <!-- 修改用户信息页面 -->
-        <activity android:name="com.beauty.ui.SetUserInfo"
+        <activity android:name="yangmbin.beauty.ui.SetUserInfo"
             android:theme="@style/MyDialogStyle" />
         <!-- 我发布的BEAUTY信息页面 -->
-        <activity android:name="com.beauty.ui.MyPublishment"/>
+        <activity android:name="yangmbin.beauty.ui.MyPublishment"/>
     </application>
 
 </manifest>
