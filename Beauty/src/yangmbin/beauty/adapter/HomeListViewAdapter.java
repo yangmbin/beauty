@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Map;
 
 import yangmbin.beauty.application.MyApplication;
+import yangmbin.beauty.fragment.LikeFragment;
 import yangmbin.beauty.fragment.MainpageFragment;
 import yangmbin.beauty.javabean.BeautyUser;
 import yangmbin.beauty.javabean.Collection;
@@ -14,6 +15,7 @@ import yangmbin.beauty.javabean.LikeOrDislike;
 import yangmbin.beauty.javabean.SharedMessage;
 import yangmbin.beauty.ui.CommentActivity;
 import yangmbin.beauty.ui.MainActivity;
+import yangmbin.beauty.ui.MyPublishment;
 
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.SaveListener;
@@ -45,6 +47,8 @@ public class HomeListViewAdapter extends BaseAdapter {
 	private Context context;                            //运行上下文   
     private LinkedList<Map<String, Object>> listItems;  //信息集合   
     private LayoutInflater listContainer;           	//视图容器  
+    
+    private String pageType; //表示当前显示listview的是哪一个页面
     
     private ImageLoader imageLoader = ImageLoader.getInstance();
     //使用DisplayImageOptions.Builder()创建DisplayImageOptions
@@ -78,11 +82,13 @@ public class HomeListViewAdapter extends BaseAdapter {
         
     } 
     
-    public HomeListViewAdapter(Context context, LinkedList<Map<String, Object>> listItems)
+    public HomeListViewAdapter(Context context, LinkedList<Map<String, Object>> listItems, String pageType)
     {
     	this.context = context;
     	this.listItems = listItems;
     	listContainer = LayoutInflater.from(context);   //创建视图容器并设置上下文   
+    	
+    	this.pageType = pageType;
     }
     
 	@Override
@@ -165,6 +171,7 @@ public class HomeListViewAdapter extends BaseAdapter {
 				Intent intent = new Intent(context, CommentActivity.class);
 				intent.putExtra("articleID", (String) listItems.get(position).get("id"));
 				intent.putExtra("itemID", position);
+				intent.putExtra("pageType", pageType);
 				context.startActivity(intent);
 			}
 		});
@@ -183,8 +190,22 @@ public class HomeListViewAdapter extends BaseAdapter {
 					public void onSuccess() {
 						Toast.makeText(context, "踩成功！", Toast.LENGTH_SHORT).show();
 						int dislikeNum = Integer.parseInt((String) MyApplication.listItems.get(position).get("dislikeNum")) + 1;
-						MyApplication.listItems.get(position).put("dislikeNum", Integer.toString(dislikeNum));
-						MainpageFragment.homeListViewAdapter.notifyDataSetChanged();
+						//更新前一个页面的踩数
+						if (pageType.equals("mainPage")) 
+						{
+							MyApplication.listItems.get(position).put("dislikeNum", Integer.toString(dislikeNum));
+							MainpageFragment.homeListViewAdapter.notifyDataSetChanged();
+						}
+						else if (pageType.equals("likePage"))
+						{
+							LikeFragment.listItems.get(position).put("dislikeNum", Integer.toString(dislikeNum));
+							LikeFragment.likeListViewAdapter.notifyDataSetChanged();
+						}
+						else if (pageType.equals("publishPage"))
+						{
+							MyPublishment.listItems.get(position).put("dislikeNum", Integer.toString(dislikeNum));
+							MyPublishment.mypublishmentListViewAdapter.notifyDataSetChanged();
+						}
 						
 						//更新SharedMessage表的dislike数
 						SharedMessage sm = new SharedMessage();
@@ -226,8 +247,22 @@ public class HomeListViewAdapter extends BaseAdapter {
 					public void onSuccess() {
 						Toast.makeText(context, "赞成功！", Toast.LENGTH_SHORT).show();
 						int likeNum = Integer.parseInt((String) MyApplication.listItems.get(position).get("likeNum")) + 1;
-						MyApplication.listItems.get(position).put("likeNum", Integer.toString(likeNum));
-						MainpageFragment.homeListViewAdapter.notifyDataSetChanged();
+						//更新前一个页面的踩数
+						if (pageType.equals("mainPage")) 
+						{
+							MyApplication.listItems.get(position).put("likeNum", Integer.toString(likeNum));
+							MainpageFragment.homeListViewAdapter.notifyDataSetChanged();
+						}
+						else if (pageType.equals("likePage"))
+						{
+							LikeFragment.listItems.get(position).put("likeNum", Integer.toString(likeNum));
+							LikeFragment.likeListViewAdapter.notifyDataSetChanged();
+						}
+						else if (pageType.equals("publishPage"))
+						{
+							MyPublishment.listItems.get(position).put("likeNum", Integer.toString(likeNum));
+							MyPublishment.mypublishmentListViewAdapter.notifyDataSetChanged();
+						}
 						
 						//更新SharedMessage表的like数
 						SharedMessage sm = new SharedMessage();

@@ -62,7 +62,7 @@ public class MyPublishment extends Activity {
 			listItems.add(map);
 		
 		//ÊÊÅäÆ÷³õÊ¼»¯
-		mypublishmentListViewAdapter = new HomeListViewAdapter(MyPublishment.this, listItems);
+		mypublishmentListViewAdapter = new HomeListViewAdapter(MyPublishment.this, listItems, "publishPage");
 		//ÉèÖÃÊÊÅäÆ÷
 		mypublishmentListView.setAdapter(mypublishmentListViewAdapter);
 		

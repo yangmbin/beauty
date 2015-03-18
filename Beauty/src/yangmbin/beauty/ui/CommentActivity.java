@@ -9,6 +9,7 @@ import java.util.Map;
 
 import yangmbin.beauty.adapter.CommentListViewAdapter;
 import yangmbin.beauty.application.MyApplication;
+import yangmbin.beauty.fragment.LikeFragment;
 import yangmbin.beauty.fragment.MainpageFragment;
 import yangmbin.beauty.javabean.BeautyUser;
 import yangmbin.beauty.javabean.Comment;
@@ -48,6 +49,7 @@ public class CommentActivity extends Activity {
 	private int clear = 0; //判断是否清空刷新前的数据
 	private String articleID; //传递过来的文章id
 	private int itemID; //传递过来的int数据，表示点击了第几个条目
+	private String pageType; //表示是从哪一个页面跳转过来的
 	@SuppressLint("Recycle") @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,6 +57,10 @@ public class CommentActivity extends Activity {
 		
 		//获取文章id
 		articleID = getIntent().getExtras().getString("articleID");
+		//获取点击的条目的index
+		itemID = getIntent().getExtras().getInt("itemID");
+		//获取跳转过来的是哪一个页面
+		pageType = getIntent().getExtras().getString("pageType");
 		
 		commentListView = (PullToRefreshListView) findViewById(R.id.listview_comment_listview);
 		//设置成两端刷新
@@ -194,9 +200,24 @@ public class CommentActivity extends Activity {
 							sm.update(getApplicationContext(), articleID, new UpdateListener() {
 								@Override
 								public void onSuccess() {
-									MyApplication.listItems.get(itemID).put("commentNum", Integer.toString(sm.getComment()));
-									MainpageFragment.homeListViewAdapter.notifyDataSetChanged();
+									//更新前一个页面的评论数
+									if (pageType.equals("mainPage")) 
+									{
+										MyApplication.listItems.get(itemID).put("commentNum", Integer.toString(sm.getComment()));
+										MainpageFragment.homeListViewAdapter.notifyDataSetChanged();
+									}
+									else if (pageType.equals("likePage"))
+									{
+										LikeFragment.listItems.get(itemID).put("commentNum", Integer.toString(sm.getComment()));
+										LikeFragment.likeListViewAdapter.notifyDataSetChanged();
+									}
+									else if (pageType.equals("publishPage"))
+									{
+										MyPublishment.listItems.get(itemID).put("commentNum", Integer.toString(sm.getComment()));
+										MyPublishment.mypublishmentListViewAdapter.notifyDataSetChanged();
+									}
 								}
+								
 								
 								@Override
 								public void onFailure(int arg0, String arg1) {

@@ -262,7 +262,7 @@ public class LikeFragment extends Fragment {
 		
 		
 		//ÊÊÅäÆ÷³õÊ¼»¯
-		likeListViewAdapter = new HomeListViewAdapter(MainActivity.instance, listItems);
+		likeListViewAdapter = new HomeListViewAdapter(MainActivity.instance, listItems, "likePage");
 		//ÉèÖÃÊÊÅäÆ÷
 		likeListView.setAdapter(likeListViewAdapter);
 		

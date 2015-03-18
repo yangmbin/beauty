@@ -191,7 +191,7 @@ public class MainpageFragment extends Fragment {
 		
 		
 		//  ≈‰∆˜≥ı ºªØ
-		homeListViewAdapter = new HomeListViewAdapter(MainActivity.instance, MyApplication.listItems);
+		homeListViewAdapter = new HomeListViewAdapter(MainActivity.instance, MyApplication.listItems, "mainPage");
 		//…Ë÷√  ≈‰∆˜
 		homeListView.setAdapter(homeListViewAdapter);
 		
